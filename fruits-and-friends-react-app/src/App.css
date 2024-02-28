@@ -1,0 +1,1073 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* General webpage and font settings */
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #faf9f6;
+	font-family: "League Spartan", Verdana, sans-serif;
+	color: #2e2e2e;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-weight: bolder;
+}
+
+/* Information button placement and style */
+#information-button {
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	background-color: #52423c;
+	position: fixed;
+	z-index: 1;
+	right: 3%;
+	bottom: 4%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	box-shadow: 8px 8px 8px rgba(0 0 0 / 20%);
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 300ms linear, opacity 300ms linear;
+}
+
+#information-button.show-element {
+	visibility: visible;
+	opacity: 1;
+}
+
+#information-button p {
+	font-size: 32px;
+	position: relative;
+	font-family: "Libre Baskerville", Georgia, serif;
+}
+
+#information-button p:hover {
+	cursor: pointer;
+}
+
+/* Information dialog style */
+#information-dialog {
+	background-color: #faf9f6;
+	color: #2e2e2e;
+	padding: 10px 5px 0px 12px;
+	display: none;
+}
+
+#information-dialog p {
+	font-size: 1rem;
+	font-family: "League Spartan", Verdana, sans-serif;
+}
+
+div.ui-widget-header {
+	font-size: 1rem;
+	background: #52423c;
+	border: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-family: "Libre Baskerville", Georgia, serif;
+}
+
+/* Placing header, home logo and main navbar correctly */
+header {
+	height: 40px;
+	padding: 8px;
+	top: 0;
+	position: sticky;
+	z-index: 1;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 500ms;
+}
+
+.home-logo {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: 8px;
+	left: 40px;
+	transition: opacity .3s;
+}
+
+#home-logo-dark {
+	display: none;
+}
+
+#main-navbar {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 40px;
+}
+
+/* Header changing color when scrolling */
+header.scrolling {
+	background-color: #faf9f6;
+	color: #2e2e2e;
+	box-shadow: 8px 8px 8px rgba(0 0 0 / 6%);
+}
+
+header.scrolling ul {
+	color: #2e2e2e
+}
+
+header.scrolling #arrow-down {
+	border-top: 7px solid #2e2e2e;
+}
+
+header.scrolling #arrow-up {
+	border-bottom: 7px solid #2e2e2e;
+}
+
+header.scrolling #navbar a {
+	color: #2e2e2e;
+}
+
+header.scrolling #home-logo-light {
+	display: none;
+}
+
+header.scrolling #home-logo-dark {
+	display: block;
+}
+
+header.scrolling #main-navbar a::before {
+	background-image: linear-gradient(90deg, #2e2e2e, #2e2e2e);
+}
+
+header.scrolling #dropdown-navbar {
+	background-color: #faf9f6;
+	box-shadow: 8px 8px 8px rgba(0 0 0 / 6%);
+}
+
+header.scrolling #hamburger-navbar-icon .line {
+	background: #2e2e2e;
+}
+
+/* Active link has a line underneath */
+header.scrolling #navbar #main-navbar .active,
+header.scrolling #dropdown-button .active {
+	background-image: linear-gradient(90deg, #2e2e2e, #2e2e2e);
+}
+
+/* Restyling all text in header */
+header ul {
+	padding: 0px;
+	padding-top: 15px;
+	list-style: none;
+	font-weight: 500;
+	font-size: 1.05rem;
+}
+
+header #navbar a {
+	text-decoration: none;
+	color: #ffffff
+}
+
+header #navbar {
+	color: #ffffff
+}
+
+header #hamburger-menu a, header #hamburger-menu ul {
+	text-decoration: none;
+	color: #2e2e2e
+}
+
+/* Dropdown button and arrow */
+#dropdown-button {
+	padding-bottom: 10px;
+	display: grid;
+	grid-auto-flow: column;
+}
+
+#dropdown-button #menu-name {
+	padding-bottom: 5px;
+	width: 140%;
+	/* Extended because of arrow */
+}
+
+.arrow {
+	height: 0;
+	width: 0;
+	border: 5px solid transparent;
+}
+
+#arrow-down {
+	border-top: 7px solid #ffffff;
+	position: relative;
+	top: 3px;
+	left: 8px;
+}
+
+#arrow-up {
+	border-bottom: 7px solid #ffffff;
+	position: relative;
+	top: -3px;
+	left: 8px;
+	display: none;
+}
+
+/* Dropdown navbar */
+#dropdown-navbar {
+	position: absolute;
+	min-width: 110px;
+	padding: 10px 20px;
+	top: 45px;
+	transform: translate(-15%, 0%);
+	background-color: #faf9f6;
+	line-height: 2;
+	border-radius: 5px;
+	display: none;
+}
+
+header #navbar #dropdown-navbar a {
+	color: #2e2e2e
+}
+
+/* Display dropdown navbar and switch arrow when hovering dropdown */
+#dropdown:hover,
+#dropdown:hover #dropdown-navbar {
+	cursor: pointer;
+	display: block;
+}
+
+#dropdown:hover #arrow-down {
+	display: none;
+}
+
+#dropdown:hover #arrow-up {
+	display: block;
+}
+
+/* Adding hover effect for main navbar */
+#main-navbar a,
+#dropdown-button li {
+	position: relative;
+	padding-bottom: 5px;
+}
+
+#main-navbar a::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background-image: linear-gradient(90deg, #ffffff, #ffffff);
+	background-size: 0 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	transition: background-size .3s ease-in;
+}
+
+#main-navbar a:hover::before {
+	background-size: 100% 2px;
+}
+
+/* Active link has a line underneath */
+#navbar #main-navbar .active,
+#dropdown-button .active {
+	background-size: 100% 2px;
+	background-image: linear-gradient(90deg, #ffffff, #ffffff);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+/* Replacing prior hover effect for dropdown navbar to bolder font */
+#dropdown-navbar a:hover::before {
+	background-size: 0;
+}
+
+#dropdown-navbar a:hover {
+	font-weight: 700;
+}
+
+/* Active link in navbar has bolder font */
+#navbar #dropdown-navbar .active {
+	background-size: 0;
+	font-weight: 700;
+}
+
+/* Hamburger menu is not displayed as default*/
+#hamburger-menu {
+	display: none;
+}
+
+/* Checkbox for accessing hamburger navbar */
+.checkbox {
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	top: 10px;
+	right: 20px;
+	z-index: 9999;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Hamburger navbar icon for accessing hamburger navbar */
+#hamburger-navbar-icon {
+	height: 26px;
+	width: 32px;
+	position: absolute;
+	z-index: 999;
+	top: 18px;
+	right: 20px;
+	display: grid;
+}
+
+#hamburger-navbar-icon .line {
+	height: 3px;
+	border-radius: 3px;
+	background: #ffffff;
+}
+
+#hamburger-navbar-icon #line1 {
+	transform-origin: 0% 0%;
+	transition: transform 0.4s ease-in-out;
+}
+
+#hamburger-navbar-icon #line2 {
+	transition: transform 0.2s ease-in-out;
+}
+
+#hamburger-navbar-icon #line3 {
+	transform-origin: 0% 100%;
+	transition: transform 0.4s ease-in-out;
+}
+
+/* Hamburger navbar */
+#hamburger-navbar {
+	position: absolute;
+	z-index: 99;
+	padding: 10px;
+	padding-top: 66px;
+	top: 0;
+	right: 0;
+	width: 360px;
+	height: 100vh;
+	background-color: #faf9f6;
+	display: none;
+}
+
+#hamburger-navbar ul {
+	display: grid;
+	grid-gap: 16px;
+	font-size: 1.15rem;
+	margin-left: 40px;
+}
+
+/* Hamburger dropdown button and arrow */
+#hamburger-dropdown-button {
+	display: flex;
+}
+
+.hamburger-arrow {
+	height: 0;
+	width: 0;
+	border: 5px solid transparent;
+}
+
+#hamburger-arrow-down {
+	border-top: 7px solid #2e2e2e;
+	position: relative;
+	top: 4px;
+	left: 8px;
+}
+
+#hamburger-arrow-up {
+	border-bottom: 7px solid #2e2e2e;
+	position: relative;
+	top: -2px;
+	left: 8px;
+	display: none;
+}
+
+/* Hamburger dropdown navbar */
+#hamburger-main-navbar #hamburger-dropdown-navbar {
+	position: relative;
+	margin: 0;
+	padding: 12px 20px 5px 20px;
+	background-color: #faf9f6;
+	line-height: 1.6;
+	display: none;
+}
+
+/* Hamburger navbar icon changes to cross when accessed */
+input[type="checkbox"]:checked ~ #hamburger-navbar-icon {
+	height: 32px;
+	width: 32px;
+}
+
+input[type="checkbox"]:checked ~ #hamburger-navbar-icon .line {
+	height: 3px;
+	background: #2e2e2e;
+}
+
+input[type="checkbox"]:checked ~ #hamburger-navbar-icon #line1 {
+	transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked ~ #hamburger-navbar-icon #line2 {
+	transform: scaleY(0);
+}
+
+input[type="checkbox"]:checked ~ #hamburger-navbar-icon #line3 {
+	transform: rotate(-45deg);
+}
+
+/* Hamburger navbar view is displayed when accessing hamburger navbar */
+input[type="checkbox"]:checked ~ #hamburger-navbar {
+	display: block;
+}
+
+/* Hover or active link in hamburger menu has bolder font-weight */
+#hamburger-navbar a:hover,
+#hamburger-dropdown-button:hover,
+#hamburger-dropdown:hover #hamburger-dropdown-button,
+#hamburger-navbar .active {
+	font-weight: 700;
+}
+
+/* Display dropdown navbar and switch arrow when clicking on dropdown */
+#hamburger-dropdown:hover,
+#hamburger-dropdown:focus #hamburger-dropdown-navbar,
+#hamburger-dropdown #dropdown-hover:hover #hamburger-dropdown-navbar {
+	cursor: pointer;
+	display: block;
+}
+
+#hamburger-dropdown:focus #hamburger-arrow-down {
+	display: none;
+}
+
+#hamburger-dropdown:focus #hamburger-arrow-up {
+	display: block;
+}
+
+/* Submenu is always displayed on webpage with active link */
+#hamburger-navbar .show-hamburger-submenu:defined #hamburger-dropdown-navbar {
+	display: block;
+}
+
+#hamburger-navbar .show-hamburger-submenu:defined #hamburger-arrow-down {
+	display: none;
+}
+
+#hamburger-navbar .show-hamburger-submenu:defined #hamburger-arrow-up {
+	display: block;
+}
+
+/* Hero image */
+.hero-img {
+	min-height: 400px;
+	height: 40svh;
+	position: relative;
+	top: -56px;
+	margin-bottom: -56px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Different images for each webpage */
+#hero-index {
+	min-height: 600px;
+	height: 100svh;
+	background-position: 67% 0;
+	background-image: url("../public/resources/index-content/hero-index.png");
+	background-attachment: fixed;
+}
+
+#hero-about-us {
+	background-image: url("/public/resources/about-us-content/hero-about.us.png");
+}
+
+#hero-lunch-menu {
+	background-image: url("/public/resources/lunch-menu-content/hero-lunch-menu.png");
+}
+
+#hero-menu {
+	background-image: url("/public/resources/menu-content/hero-menu.png");
+}
+
+#hero-contact {
+	background-image: url("/public/resources/contact-content/hero-contact.png");
+}
+
+/* Hero alignment */
+#hero {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 10vw;
+	align-items: center;
+}
+
+/* Logo and font size */
+#logo {
+	max-height: 330px;
+	max-width: 330px;
+}
+
+#hero h1 {
+	font-size: 3.3rem;
+	color: #ffffff
+}
+
+/* Main */
+main {
+	padding: clamp(60px, 10%, 120px) clamp(12px, 5%, 100px);
+	font-size: 1.2rem;
+}
+
+main p {
+	line-height: 1.5;
+}
+
+main a {
+	color: #2e2e2e;
+}
+
+/* Index page content */
+#content-index #welcome,
+#content-index #business {
+	display: grid;
+	grid-template-areas:
+		"pos1 pos2";
+	grid-gap: 5%;
+	align-items: center;
+}
+
+#content-index #business {
+	grid-template-columns: min-content;
+}
+
+#welcome #welcome-msg #opening-msg {
+	margin-top: 40px;
+}
+
+.index-img {
+	width: 460px;
+	height: 360px;
+	background-position: center;
+	background-repeat: no-repeat;
+	object-fit: cover;
+}
+
+#index-img1 {
+	display: flex;
+	justify-self: flex-end;
+}
+
+#index-img2 {
+	grid-area: pos1;
+}
+
+#business-msg {
+	grid-area: pos2;
+}
+
+#business {
+	margin-top: 5%;
+	margin-bottom: 1%;
+}
+
+/* About us page content */
+#about-us-msg {
+	margin-bottom: clamp(46px, 5%, 100px);
+}
+
+/* Image carousel */
+#image-carousel {
+	position: relative;
+	z-index: 0;
+	margin-bottom: 30px;
+}
+
+.splide__slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Lunch menu page table content */
+.weekNrAndButton {
+	border: 1px solid #ddd;
+	display: grid;
+	grid-template-areas:
+		"pos1 pos2";
+	align-items: center;
+	margin-bottom: -12px;
+	background-color: #52423c;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: #ffffff;
+}
+
+.weekNrAndButton #weeknr-alignment1,
+.weekNrAndButton #weeknr-alignment2,
+.weekNrAndButton #weeknr-alignment3 {
+	height: 55px;
+	font-size: 1rem;
+	position: relative;
+	top: -1px;
+}
+
+.weekNrAndButton button {
+	width: 0px;
+	height: 0px;
+	background-color: transparent;
+	padding: 8px;
+	border: solid #ffffff;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+}
+
+.weekNrAndButton button:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+/* Aligning first week number and button for week one */
+.weekNrAndButton #weeknr-alignment1 {
+	grid-area: pos1;
+	display: flex;
+	justify-self: end;
+	position: relative;
+	right: -10px;
+}
+
+.weekNrAndButton #button-alignment1 {
+	grid-area: pos2;
+	display: flex;
+	justify-self: end;
+}
+
+/* Aligning second button, week number and third button for week two */
+#weekNrAndButton2 {
+	grid-template-areas:
+		"pos1 pos2 pos3";
+}
+
+.weekNrAndButton #weeknr-alignment2 {
+	grid-area: pos2;
+	display: flex;
+	justify-self: center;
+}
+
+.weekNrAndButton #button-alignment2 {
+	grid-area: pos1;
+}
+
+.weekNrAndButton #button-alignment3 {
+	grid-area: pos3;
+	display: flex;
+	justify-self: end;
+}
+
+/* Aligning third week number and fourth button for week three */
+.weekNrAndButton #weeknr-alignment3 {
+	grid-area: pos2;
+	left: -10px;
+}
+
+.weekNrAndButton #button-alignment4 {
+	grid-area: pos1;
+}
+
+/* Styling all buttons */
+.weekNrAndButton #button1,
+.weekNrAndButton #button3 {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.weekNrAndButton #button2,
+.weekNrAndButton #button4 {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	position: relative;
+	top: -1px;
+}
+
+/* Lunch menu table styling */
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#lunch-info-w1 {
+	width: 100%;
+}
+
+#lunch-info-w2,
+#lunch-info-w3 {
+	width: 100%;
+	display: none;
+}
+
+th {
+	text-align: left;
+	background-color: #52423c;
+	color: white;
+}
+
+th, td {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+.day {
+	color: #645049;
+}
+
+.empty {
+	display: none;
+}
+
+/* Menu page */
+hr {
+	border: 1px solid #2e2e2e;
+}
+
+/* Contact page find us content */
+#map {
+	min-height: 300px;
+	height: 30vh;
+}
+
+#content-contact iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+#message {
+	height: 200px;
+}
+
+/* Contact page message us content */
+#contact-us-msg {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+input[type=text], input[type=tel], textarea {
+	background-color: #ffffff;
+	width: 100%;
+	padding: 12px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+	font-family: "League Spartan", Verdana, sans-serif;
+	font-size: 1rem;
+	color: #2e2e2e;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px #ffffff inset;
+}
+
+/* The input area you're on has different color and font boldness */
+textarea:focus, input:focus, input[type=submit]:hover {
+	border-color: #645049;
+	outline: #645049;
+}
+
+.input-container:focus-within label, input[type=submit]:hover {
+	font-weight: 600;
+	color: #645049;
+}
+
+/* Submit button styling */
+input[type=submit] {
+	width: 100px;
+	background-color: #ffffff;
+	padding: 14px 20px 10px 20px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-family: "League Spartan", Verdana, sans-serif;
+	color: #2e2e2e;
+	font-weight: 400;
+}
+
+/* Footer */
+footer {
+	position: relative;
+	padding: 40px 10% 80px clamp(12px, 5%, 100px);
+	background-color: #3e322d;
+	color: #ffffff;
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: space-between;
+}
+
+footer ul {
+	position: relative;
+	top: -6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 2;
+}
+
+footer a {
+	color: #ffffff;
+}
+
+/* Align icon and information in footer */
+.icon-and-info {
+	position: relative;
+	left: -2px;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: max-content;
+	grid-gap: 8px;
+	align-items: center;
+}
+
+.icon {
+	height: 26px;
+	width: 26px;
+}
+
+.print-icon {
+	height: 26px;
+	width: 26px;
+	display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+	/* Change dimensions of logo and text */
+	#logo {
+		max-width: 280px;
+	}
+	#hero h1 {
+		font-size: 2.7rem;
+	}
+	/* Change content padding and text size */
+	main {
+		font-size: 1.1rem;
+	}
+	/* Change index content dimensions */
+	.index-img {
+		width: 380px;
+	}
+}
+
+@media (max-width: 1024px) {
+	/* Change text size */
+	main {
+		font-size: 1rem;
+	}
+	/* Change index content dimensions */
+	.index-img {
+		width: 300px;
+	}
+	/* Change footer padding and alignment */
+	footer {
+		grid-auto-flow: row;
+		grid-gap: 24px;
+	}
+}
+
+@media (max-width: 768px) {
+	/* Center logo */
+	#logo {
+		padding: 0 60px;
+		margin-top: 30px;
+	}
+	/* Change alignment of logo and text */
+	#hero {
+		grid-auto-flow: row;
+		grid-gap: 6vh;
+	}
+	#hero h1 {
+		text-align: center;
+	}
+	/* Resize and align index content */
+	#content-index {
+		margin: 0;
+	}
+	#content-index #welcome,
+	#content-index #business {
+		grid-template-areas:
+			"pos1"
+			"pos2";
+		grid-gap: 0;
+	}
+	#content-index #business {
+		grid-template-columns: none;
+	}
+	.index-img {
+		width: 100%;
+		height: 300px;
+		margin: 30px 0;
+	}
+	#business-msg {
+		grid-area: pos1;
+	}
+	#index-img2 {
+		grid-area: pos2;
+	}
+	#business {
+		margin: 0;
+	}
+	/* Change lunch menu table */
+	table .day {
+		background-color: #52423c;
+		color: #ffffff;
+	}
+	table tr {
+		border-bottom: 3px solid #ddd;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+	}
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+	table {
+		position: relative;
+	}
+	/* Hide table headers, not display: none; for accessibility */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		background-color: #ffffff;
+		padding-left: 10px;
+	}
+	td:before {
+		padding-right: 10px;
+		white-space: nowrap;
+		font-weight: 700;
+		color: #645049;
+	}
+	td:nth-of-type(2):before {
+		content: "DAGENS WRAP";
+	}
+	td:nth-of-type(3):before {
+		content: "DAGENS JUICE";
+	}
+}
+
+@media (max-width: 568px) {
+	/* Change dimensions of logo and text */
+	#logo {
+		max-width: 240px;
+	}
+	#hero h1 {
+		font-size: 2rem;
+	}
+	/* Change hamburger navbar dimensions */
+	#hamburger-navbar {
+		width: 70vw;
+	}
+}
+
+@media (max-width: 568px), (pointer:none), (pointer:coarse) {
+	/* Hamburger navbar for smaller screen and mobile or tablet view */
+	.home-logo {
+		left: 20px;
+	}
+	#navbar {
+		display: none;
+	}
+	#hamburger-menu {
+		display: block;
+	}
+}
+
+@media (pointer:none), (pointer:coarse) {
+	/* Fixed background not available for mobile and tablet */
+	#hero-index {
+		background-attachment: initial;
+	}
+}
+
+@media print {
+	/* Changing base colors for print */
+	body {
+		background-color: #ffffff;
+		color: #000000;
+	}
+	#hero h1 {
+		color: #000000;
+	}
+	main h3 {
+		color: #000000;
+	}
+	/* Removing unnecessary parts for print */
+	header {
+		display: none;
+	}
+	#hero-lunch-menu {
+		background-image: none;
+	}
+	/* Changing gap and colors of content */
+	#content-lunch-menu {
+		margin-top: -220px;
+	}
+	table .day {
+		background-color: #ffffff;
+		color: #000000;
+	}
+	td:before {
+		color: #000000;
+	}
+	/* Changing gap and colors of footer */
+	footer {
+		margin-top: -70px;
+		background-color: #ffffff;
+		color: #000000;
+	}
+	footer a {
+		color: #000000;
+		text-decoration: none;
+	}
+	.icon {
+		display: none;
+	}
+	.print-icon {
+		display: block;
+	}
+}
