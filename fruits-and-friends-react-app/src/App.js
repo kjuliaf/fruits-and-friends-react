@@ -38,7 +38,7 @@ function App() {
 			<Router>
 				<Header scrollingClass={scroll} lunchMenuClass={lunchMenuActive} menuClass={menuActive} />
 				<Routes>
-					<Route exact path="/" element={<Home />} />
+					<Route path="/" element={<Home />} />
 					<Route path="/about-us" element={<About />} />
 					<Route path="/lunch-menu" element={<LunchMenu />} />
 					<Route path="/menu" element={<Menu />} />
