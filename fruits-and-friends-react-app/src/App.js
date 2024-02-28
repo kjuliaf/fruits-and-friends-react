@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -35,17 +35,15 @@ function App() {
 	}, []);
 	return (
 		<div>
-			<Router>
-				<Header scrollingClass={scroll} lunchMenuClass={lunchMenuActive} menuClass={menuActive} />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/about-us" element={<About />} />
-					<Route path="/lunch-menu" element={<LunchMenu />} />
-					<Route path="/menu" element={<Menu />} />
-					<Route path="/contact" element={<Contact />} />
-				</Routes>
-				<Footer />
-			</Router>
+			<Header scrollingClass={scroll} lunchMenuClass={lunchMenuActive} menuClass={menuActive} />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about-us" element={<About />} />
+				<Route path="/lunch-menu" element={<LunchMenu />} />
+				<Route path="/menu" element={<Menu />} />
+				<Route path="/contact" element={<Contact />} />
+			</Routes>
+			<Footer />
 		</div>
 	);
 }
