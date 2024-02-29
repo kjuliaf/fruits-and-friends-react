@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import LunchMenu from "./pages/LunchMenu";
 import Menu from "./pages/Menu";
+import Order from "./pages/Order";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
@@ -41,6 +42,7 @@ function App() {
 				<Route path="/about-us" element={<About />} />
 				<Route path="/lunch-menu" element={<LunchMenu />} />
 				<Route path="/menu" element={<Menu />} />
+				<Route path="/order" element={<Order />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>
 			<Footer />

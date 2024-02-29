@@ -355,6 +355,10 @@ header #navbar #dropdown-navbar a {
 	display: none;
 }
 
+#hamburger-navbar.unvisible {
+	display: none;
+}
+
 #hamburger-navbar ul {
 	display: grid;
 	grid-gap: 16px;
@@ -494,6 +498,10 @@ input[type="checkbox"]:checked ~ #hamburger-navbar {
 
 #hero-menu {
 	background-image: url("/public/resources/menu-content/hero-menu.png");
+}
+
+#hero-order {
+	background-image: url("/public/resources/order-content/hero-order.png");
 }
 
 #hero-contact {
