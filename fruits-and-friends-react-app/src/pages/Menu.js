@@ -1,7 +1,7 @@
 import React from "react";
 
 const Menu = () => {
-		return (
+	return (
 		<div>
 			<div className="hero-img" id="hero-menu">
 				<div id="hero">

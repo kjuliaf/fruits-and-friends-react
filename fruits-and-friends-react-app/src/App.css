@@ -355,10 +355,6 @@ header #navbar #dropdown-navbar a {
 	display: none;
 }
 
-#hamburger-navbar.unvisible {
-	display: none;
-}
-
 #hamburger-navbar ul {
 	display: grid;
 	grid-gap: 16px;
