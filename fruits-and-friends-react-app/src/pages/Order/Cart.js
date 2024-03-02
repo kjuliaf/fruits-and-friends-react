@@ -19,9 +19,9 @@ const Cart = (props) => {
 	function insertCartItems() {
 		let cartItemsToInsert = [];
 		let i = 0;
-		props.myMap.forEach((value, key) => {
+		props.cartItems.forEach((value, key) => {
 			cartItemsToInsert.push(
-				<CartItem 
+				<CartItem
 					title={key}
 					quantity={value[0]}
 					price={value[1]}
@@ -36,42 +36,47 @@ const Cart = (props) => {
 		return <div>{cartItemsToInsert}</div>;
 	}
 
-	return(
+	return (
 		<dialog ref={modalRef} className="modal">
 			<div id="modal-info">
+				{/* Cart title and close button at top of modal */}
 				<h3>KASSA</h3>
 				<button onClick={props.hideCartModal}>X</button>
 			</div>
+
 			<div id="items">
-				<div className="cartItems">
+				<div className="cart-section">
+					{/* Inserts cart items and total price */}
 					<h4>VAROR</h4>
 					{insertCartItems()}
 					<div id="total-price"><h5>TOTALT: {props.totalPrice}:-</h5></div>
 				</div>
-				<div className="cartItems">
+
+				<div className="cart-section">
+					{/* User information form */}
 					<h4>UPPGIFTER</h4>
 					<div className="order-form">
-							<div className="input-container">
-								<label htmlFor="name">Namn</label>
-								<input type="text" className="input" id="name" name="name" />
-							</div>
-
-							<div className="input-container">
-								<label htmlFor="mail">Mailadress</label>
-								<input type="text" className="input" id="mail" name="mail" />
-							</div>
-
-							<div className="input-container">
-								<label htmlFor="phone">Telefonnummer</label>
-								<input type="tel" className="input" id="phone" name="phone" />
-							</div>
-
-							<div className="input-container">
-								<label htmlFor="message">Upplysning</label>
-								<textarea className="input" id="message" name="message"></textarea>
-							</div>
-							<input id="send-order-button" type="submit" value="Skicka beställning" />
+						<div className="input-container">
+							<label htmlFor="name">Namn</label>
+							<input type="text" className="input" id="name" name="name" />
 						</div>
+
+						<div className="input-container">
+							<label htmlFor="mail">Mailadress</label>
+							<input type="text" className="input" id="mail" name="mail" />
+						</div>
+
+						<div className="input-container">
+							<label htmlFor="phone">Telefonnummer</label>
+							<input type="tel" className="input" id="phone" name="phone" />
+						</div>
+
+						<div className="input-container">
+							<label htmlFor="message">Upplysning</label>
+							<textarea className="input" id="message" name="message"></textarea>
+						</div>
+						<input id="send-order-button" type="submit" value="Skicka beställning" />
+					</div>
 				</div>
 			</div>
 		</dialog>

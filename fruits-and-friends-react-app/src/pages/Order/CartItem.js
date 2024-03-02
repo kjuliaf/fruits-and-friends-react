@@ -10,8 +10,9 @@ const CartItem = (props) => {
 		props.setUpdateItems(true);
 	}
 
-	return(
-		<div id="cartItem">
+	return (
+		/* Cart item information and remove button option */
+		<div id="cart-item">
 			<h4>{props.quantity} x {props.title}</h4>
 			<div id="price-and-option">
 				<p>{props.price}:-</p>

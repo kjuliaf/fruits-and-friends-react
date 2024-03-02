@@ -764,7 +764,7 @@ hr {
 	margin-bottom: 60px;
 }
 
-.menuItem {
+.menu-item {
 	background-color: #ffffff;
 	border-radius: 10px;
 	box-shadow: 8px 8px 18px rgba(0 0 0 / 20%);
@@ -776,13 +776,13 @@ hr {
 	margin-bottom: 20px;
 }
 
-.menuItemChoice {
+.menu-item-choice {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.menuItem button {
+.menu-item button {
 	background-color: #645049;
 	border-radius: 5px;
 	color: #ffffff;
@@ -792,36 +792,39 @@ hr {
 	font-size: 1.1rem;
 	cursor: pointer;
 	margin: 10px;
+	height: 40px;
 	width: 80px;
 }
 
-.menuItem button:hover {
+.menu-item button:hover {
 	background-color: #7f6a63;
 }
 
-.menuItem select {
+.menu-item select {
 	background-color: #645049;
 	border-radius: 5px;
 	color: #ffffff;
 	border: none;
-	padding: 10px 8px 8px 8px;
+	padding: 12px 8px 10px 8px;
 	font-family: "League Spartan", Verdana, sans-serif;
 	font-size: 1.1rem;
 	cursor: pointer;
 	margin: 10px;
+	height: 40px;
 }
 
-#numberOfChosenItems {
+#chosen-quantity {
 	background-color: #645049;
 	font-size: 1.1rem;
 	border-radius: 5px;
 	color: #ffffff;
 	border: none;
-	padding: 6px 10px 4px 10px;
-	margin-right: 10px;
+	padding: 8px 12px 2px 12px;
+	height: 30px;
+	margin: 0 10px;
 }
 
-#cart {
+#cart-button {
 	background-color: #645049;
 	border-radius: 5px;
 	color: #ffffff;
@@ -834,7 +837,7 @@ hr {
 	margin: 0 10px;
 }
 
-#cart:hover {
+#cart-button:hover {
 	background-color: #7f6a63;
 }
 
@@ -884,14 +887,20 @@ hr {
 	z-index: 2;
 }
 
-.cartItems {
+#price-and-option button {
+	height: 40px;
+	width: 80px;
+	font-size: 1.1rem;
+}
+
+.cart-section {
 	padding: 10px 20px 70px 20px;
 	background-color: #eae9e3;
 	border-radius: 10px;
 	margin-bottom: 40px;
 }
 
-#cartItem {
+#cart-item {
 	background-color: #d4d3ce;
 	padding: 10px 20px;
 	border-radius: 10px;
@@ -913,8 +922,8 @@ hr {
 
 #total-price {
 	position: relative;
-	margin-top:-18px;
-	float:right;
+	margin-top: -18px;
+	float: right;
 	right: 10px;
 }
 
@@ -925,7 +934,7 @@ hr {
 #send-order-button {
 	background-color: #645049;
 	color: #ffffff;
-	border:none;
+	border: none;
 	width: 160px;
 	float: right;
 	font-size: 1.2rem;
@@ -1171,22 +1180,23 @@ footer a {
 		content: "DAGENS JUICE";
 	}
 	/* Change order page content */
-	.menuItem {
+	.menu-item {
 		flex-direction: column;
 		justify-content: baseline;
 		align-items: baseline;
 		margin-bottom: 20px;
 	}
-	.menuItem select {
+	.menu-item select {
 		margin: 10px 5px 10px 0px;
 	}
-	.menuItem p {
-		margin: 10px 5px 10px 0px;
-	}
-	#cartItem {
+	#cart-item {
 		flex-direction: column;
 		justify-content: baseline;
 		align-items: baseline;
+	}
+	#chosen-quantity {
+		margin: 0;
+		margin-right: 5px;
 	}
 }
 

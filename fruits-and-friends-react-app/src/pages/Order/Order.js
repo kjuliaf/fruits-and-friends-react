@@ -7,7 +7,7 @@ import drinkItems from "./drinkItems.json"
 const Order = () => {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [showCart, setShowCart] = useState(false);
-	const [myMap, setMapState] = useState(new Map());
+	const [cartItems, setCartItems] = useState(new Map());
 	const [updateItems, setUpdateItems] = useState(false);
 
 	/**
@@ -19,21 +19,21 @@ const Order = () => {
 		let menuItemsToInsert = [];
 		menuItemData.map((data, id) => (
 			menuItemsToInsert.push(
-					<div key={id}>
-						<MenuItem
-							title={data.title}
-							description={data.description}
-							price={data.price}
-							addToTotalPrice={addToTotalPrice}
-							removeFromTotalPrice={removeFromTotalPrice}
-							addToMap={addToMap}
-							removeFromMap={removeFromMap}
-							myMap={myMap}
-							updateItems={updateItems}
-							setUpdateItems={setUpdateItems}
-						/>
-					</div>
-				)
+				<div key={id}>
+					<MenuItem
+						title={data.title}
+						description={data.description}
+						price={data.price}
+						addToTotalPrice={addToTotalPrice}
+						removeFromTotalPrice={removeFromTotalPrice}
+						addToMap={addToMap}
+						removeFromMap={removeFromMap}
+						cartItems={cartItems}
+						updateItems={updateItems}
+						setUpdateItems={setUpdateItems}
+					/>
+				</div>
+			)
 		))
 		return menuItemsToInsert;
 	}
@@ -76,7 +76,7 @@ const Order = () => {
 	 * @param {array} value - value array.
 	 */
 	function addToMap(key, value) {
-		setMapState(myMap.set(key, value));
+		setCartItems(cartItems.set(key, value));
 	}
 
 	/**
@@ -84,7 +84,7 @@ const Order = () => {
 	* @param {string} key - title key string.
 	*/
 	function removeFromMap(key) {
-		myMap.delete(key);
+		cartItems.delete(key);
 	}
 
 	return (
@@ -95,23 +95,26 @@ const Order = () => {
 				</div>
 			</div>
 			<main id="order-content">
+				{/* Inserts menu items */}
 				<h2>MAT</h2>
 				{insertMenuItems(foodItems)}
 
 				<br /><h2>DRYCK</h2>
 				{insertMenuItems(drinkItems)}
 
+				{/* Cart button that displays cart as modal */}
 				<br />
-				<button id="cart" onClick={showCartModal}>Gå till kassa ({totalPrice}:-)</button>
+				<button id="cart-button" onClick={showCartModal}>Gå till kassa ({totalPrice}:-)</button>
 
-				{ showCart ? <Cart 
+				{/* Cart modal component */}
+				{showCart ? <Cart
 					hideCartModal={hideCartModal}
 					totalPrice={totalPrice}
 					removeFromTotalPrice={removeFromTotalPrice}
-					myMap={myMap}
+					cartItems={cartItems}
 					removeFromMap={removeFromMap}
 					setUpdateItems={setUpdateItems}
-				/> : null }
+				/> : null}
 			</main>
 		</div>
 	);
