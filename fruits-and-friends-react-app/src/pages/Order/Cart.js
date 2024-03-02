@@ -49,7 +49,7 @@ const Cart = (props) => {
 					<div id="total-price"><h5>TOTALT: {props.totalPrice}:-</h5></div>
 				</div>
 				<div className="cartItems">
-					<h4>BESTÄLLNINGSINFORMATION</h4>
+					<h4>UPPGIFTER</h4>
 					<div className="order-form">
 							<div className="input-container">
 								<label htmlFor="name">Namn</label>

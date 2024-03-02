@@ -1015,7 +1015,6 @@ footer {
 	display: grid;
 	grid-auto-flow: column;
 	justify-content: space-between;
-	margin-bottom: -2px;
 }
 
 footer ul {
@@ -1170,6 +1169,24 @@ footer a {
 	}
 	td:nth-of-type(3):before {
 		content: "DAGENS JUICE";
+	}
+	/* Change order page content */
+	.menuItem {
+		flex-direction: column;
+		justify-content: baseline;
+		align-items: baseline;
+		margin-bottom: 20px;
+	}
+	.menuItem select {
+		margin: 10px 5px 10px 0px;
+	}
+	.menuItem p {
+		margin: 10px 5px 10px 0px;
+	}
+	#cartItem {
+		flex-direction: column;
+		justify-content: baseline;
+		align-items: baseline;
 	}
 }
 
