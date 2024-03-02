@@ -29,12 +29,12 @@ const Menu = () => {
 				<p><b>Falafel:</b> Sallad, pico de gallo, rödbetor, tahinisås, sirachasås.</p>
 
 				<br />
-				<h3>MACKOR PÅ DANSKT RÅGbr /ÖD (62:-)</h3>
+				<h3>MACKOR PÅ DANSKT RÅGBRÖD (62:-)</h3>
 
 				<p><b>Avokado:</b>  Sallad, basilikaolja och rivna rödbetor.</p>
 				<p><b>Tonfiskröra:</b>  Sallad och rivna rödbetor.</p>
 				<p><b>Hummus:</b>  Sallad och groddar.</p>
-				<p><b>Bananbr /öd:</b>  Toppas med jordnötssmör och bär.</p>
+				<p><b>Bananbröd:</b>  Toppas med jordnötssmör och bär.</p>
 
 				<br />
 				<h3>BOWLS, PUDDING & GRÖT</h3>
@@ -58,7 +58,7 @@ const Menu = () => {
 				<p>Havregryn, kokade med banan och havremjölk. Serveras med bär, jordnötssmör och skummad havremjölk.</p>
 
 				<h4>Hummustallrik (85:-)</h4>
-				<p>Hummus, tahini, persilja, tomat, paprika, olivolja, 1/4 lime + knäckebr /öd.</p>
+				<p>Hummus, tahini, persilja, tomat, paprika, olivolja, 1/4 lime + knäckebröd.</p>
 				<br /><br />
 
 				<h2>DRYCK</h2>
@@ -79,7 +79,7 @@ const Menu = () => {
 				<p><b>Apple Snap:</b> Äpple, hallon och ingefära</p>
 				<p><b>Hallonlakrits:</b> Äpple, hallon och lakritsrot.</p>
 				<p><b>Passion:</b> Passionsfrukt, mango, hallon och apelsin</p>
-				<p><b>Summerbr /eeze:</b> Jordgubbar, äpple, lime och mynta</p>
+				<p><b>Summerbreeeze:</b> Jordgubbar, äpple, lime och mynta</p>
 
 				<br />
 				<h3>SHAKES (liten 64:- / stor 74:-)</h3>

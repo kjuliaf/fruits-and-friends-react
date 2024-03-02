@@ -1,0 +1,27 @@
+[
+	{
+		"title": "GRÖNSAKSJUICE",
+		"description": "Grönkål, selleri, citron, äpple och ingefära.",
+		"price": 68
+	},
+	{
+		"title": "VERY BERRY JUICE",
+		"description": "Jordgubb, hallon, blåbär och äpple.",
+		"price": 68
+	},
+	{
+		"title": "PASSIONSFRUKTSJUICE",
+		"description": "Passionsfrukt, mango, hallon och apelsin.",
+		"price": 68
+	},
+	{
+		"title": "MANGONANA SHAKE",
+		"description": "Mango, ananas, banan, apelsin, lime och äpple.",
+		"price": 74
+	},
+	{
+		"title": "VANILLA CHAI SHAKE",
+		"description": "Fryst banan, vaniljprotein, linfrö, chaikrydda och havremjölk.",
+		"price": 78
+	}
+]

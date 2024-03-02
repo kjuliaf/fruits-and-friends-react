@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import LunchMenu from "./pages/LunchMenu";
 import Menu from "./pages/Menu";
-import Order from "./pages/Order";
+import Order from "./pages/Order/Order";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import "./App.css";

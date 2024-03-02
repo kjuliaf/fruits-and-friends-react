@@ -1,32 +1,42 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
 	const [scroll, setScroll] = useState(false);
+	const [lunchMenuActive, setLunchMenuActive] = useState(false);
+	const [menuActive, setMenuActive] = useState(false);
+	const { pathname } = useLocation();
+
+	/**
+	 * Checks if user has scrolled down on the website.
+	 */
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			setScroll(window.scrollY > 50);
 		});
 	}, []);
 
-	const [lunchMenuActive, setLunchMenuActive] = useState(false);
+	/**
+	 * Checks if user has entered lunch menu page
+	 */
 	useEffect(() => {
 		const lunchMenuElement = document.getElementById("lunch-menu-link");
-		window.addEventListener("click", () => {
-			setLunchMenuActive(lunchMenuElement.classList.contains("active"));
-		});
-	}, []);
+		setLunchMenuActive(lunchMenuElement.classList.contains("active"));
+	}, [pathname]);
 
-	const [menuActive, setMenuActive] = useState(false);
+	/**
+	 * Checks if user has entered menu page
+	 */
 	useEffect(() => {
 		const menuElement = document.getElementById("menu-link");
-		window.addEventListener("click", () => {
-			setMenuActive(menuElement.classList.contains("active"));
-		});
-	}, []);
+		setMenuActive(menuElement.classList.contains("active"));
+	}, [pathname]);
 
+	/**
+	 * Hides hamburger menu.
+	 */
 	function hideHamburgerMenu() {
 		document.getElementsByClassName("checkbox")[0].checked = false;
 	}

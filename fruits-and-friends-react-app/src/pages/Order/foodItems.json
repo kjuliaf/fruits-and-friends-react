@@ -1,0 +1,27 @@
+[
+	{	
+		"title": "F&F SALLAD",
+		"description": "Sallad på en smakrik och nyttig blandning av bladgrönt, rårivet, groddar, bönor, linser och quinoa.",
+		"price": 135
+	},
+	{
+		"title": "FETAOSTWRAP",
+		"description": "Sallad, rivna morötter och rödbetor, agaverostade mandlar och äpple.",
+		"price": 99
+	},
+	{
+		"title": "FALAFELWRAP",
+		"description": "Sallad, pico de gallo, rödbetor, tahinisås, sirachasås.",
+		"price": 99
+	},
+	{
+		"title": "ACAI BOWL",
+		"description": "Acaipuré, jordgubbar, banan mixade till en underbar krämig tjock smoothiebowl. Toppas med vår egna granola, frukt och bär och jordnötssmör.",
+		"price": 109
+	},
+	{
+		"title": "HUMMUSTALLRIK",
+		"description": "Hummus, tahini, persilja, tomat, paprika, olivolja, 1/4 lime + knäckebröd",
+		"price": 85
+	}
+]
