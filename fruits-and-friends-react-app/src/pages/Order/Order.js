@@ -88,23 +88,29 @@ const Order = () => {
 	}
 
 	return (
-		<div>
+		<div id="menu-items">
 			<div className="hero-img" id="hero-order">
 				<div id="hero">
 					<h1>BESTÄLL</h1>
 				</div>
 			</div>
 			<main id="order-content">
-				{/* Inserts menu items */}
-				<h2>MAT</h2>
-				{insertMenuItems(foodItems)}
+				<div>
+					{/* Inserts menu items */}
+					<h2>MAT</h2>
+					<div className="order-section">
+						{insertMenuItems(foodItems)}
+					</div>
 
-				<br /><h2>DRYCK</h2>
-				{insertMenuItems(drinkItems)}
+					<br /><br /><h2>DRYCK</h2>
+					<div className="order-section">
+						{insertMenuItems(drinkItems)}
+					</div>
 
-				{/* Cart button that displays cart as modal */}
-				<br />
-				<button id="cart-button" onClick={showCartModal}>Gå till kassa ({totalPrice}:-)</button>
+					{/* Cart button that displays cart as modal */}
+					<br />
+					<button id="cart-button" onClick={showCartModal}>Gå till kassan ({totalPrice}:-)</button>
+				</div>
 
 				{/* Cart modal component */}
 				{showCart ? <Cart

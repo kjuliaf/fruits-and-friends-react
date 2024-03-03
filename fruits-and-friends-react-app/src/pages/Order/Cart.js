@@ -45,7 +45,7 @@ const Cart = (props) => {
 			</div>
 
 			<div id="items">
-				<div className="cart-section">
+				<div className="cart-section" id="cart-item-section">
 					{/* Inserts cart items and total price */}
 					<h4>VAROR</h4>
 					{insertCartItems()}

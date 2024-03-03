@@ -13,9 +13,12 @@ const CartItem = (props) => {
 	return (
 		/* Cart item information and remove button option */
 		<div id="cart-item">
-			<h4>{props.quantity} x {props.title}</h4>
+			<div>
+				<h4>{props.title}</h4>
+				<h5>{props.price}:-</h5>
+			</div>
 			<div id="price-and-option">
-				<p>{props.price}:-</p>
+				<p>({props.quantity} st à {(props.price)/(props.quantity)}:-)</p>
 				<button className="remove-from-cart" onClick={removeCartItem}>Ta bort</button>
 			</div>
 		</div>

@@ -764,16 +764,30 @@ hr {
 	margin-bottom: 60px;
 }
 
-.menu-item {
-	background-color: #ffffff;
+.order-section {
+	background-color: #eae9e3;
+	padding: 30px 20px 20px 20px;
 	border-radius: 10px;
-	box-shadow: 8px 8px 18px rgba(0 0 0 / 20%);
-	padding: 10px 20px;
+}
+
+#menu-items {
+	padding-bottom: 10px;
+}
+
+.menu-item {
+	background-color: #fffefd;
+	border-radius: 10px;
+	padding: 16px 20px;
 	color: #2e2e2e;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
+	border: 2px solid #d4d3ce;
+}
+
+.menu-item-info p {
+	margin-top: -8px;
 }
 
 .menu-item-choice {
@@ -791,7 +805,7 @@ hr {
 	font-family: "League Spartan", Verdana, sans-serif;
 	font-size: 1.1rem;
 	cursor: pointer;
-	margin: 10px;
+	margin: 10px 5px 10px 10px;
 	height: 40px;
 	width: 80px;
 }
@@ -834,7 +848,7 @@ hr {
 	font-size: 1.2rem;
 	cursor: pointer;
 	float: right;
-	margin: 0 10px;
+	margin: 10px;
 }
 
 #cart-button:hover {
@@ -889,6 +903,7 @@ hr {
 
 #price-and-option button {
 	height: 40px;
+	min-width: 80px;
 	width: 80px;
 	font-size: 1.1rem;
 }
@@ -898,6 +913,10 @@ hr {
 	background-color: #eae9e3;
 	border-radius: 10px;
 	margin-bottom: 40px;
+}
+
+#cart-item-section {
+	padding-bottom: 55px;
 }
 
 #cart-item {
@@ -922,9 +941,13 @@ hr {
 
 #total-price {
 	position: relative;
-	margin-top: -18px;
+	margin-top: -16px;
 	float: right;
 	right: 10px;
+}
+
+#cart-item h5 {
+	margin-top: -8px;
 }
 
 #items {
@@ -936,8 +959,9 @@ hr {
 	color: #ffffff;
 	border: none;
 	width: 160px;
+	height: 40px;;
 	float: right;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	padding: 12px 10px 8px;
 }
 
@@ -1186,6 +1210,9 @@ footer a {
 		align-items: baseline;
 		margin-bottom: 20px;
 	}
+	.menu-item-choice {
+		margin: 0 0 8px 0;
+	}
 	.menu-item select {
 		margin: 10px 5px 10px 0px;
 	}
@@ -1194,9 +1221,22 @@ footer a {
 		justify-content: baseline;
 		align-items: baseline;
 	}
+	#cart-item h5 {
+		margin: 0;
+		margin-top: -8px;
+	}
 	#chosen-quantity {
 		margin: 0;
 		margin-right: 5px;
+	}
+	#price-and-option {
+		display: flex;
+		align-self: end;
+		margin-top: 6px;
+	}
+	#price-and-option p {
+		margin-right: 14px;
+		font-size: 0.95rem;
 	}
 }
 
