@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fruits-and-friends-react/static/css/main.09848bce.css",
-    "main.js": "/fruits-and-friends-react/static/js/main.3b068912.js",
+    "main.css": "/fruits-and-friends-react/static/css/main.8410511c.css",
+    "main.js": "/fruits-and-friends-react/static/js/main.40239def.js",
     "static/js/453.a81d8d96.chunk.js": "/fruits-and-friends-react/static/js/453.a81d8d96.chunk.js",
     "static/media/hero-order.png": "/fruits-and-friends-react/static/media/hero-order.30f205f3fd0764aba67f.png",
     "static/media/hero-contact.png": "/fruits-and-friends-react/static/media/hero-contact.9a68a5fda08ac44b11d3.png",
@@ -10,12 +10,12 @@
     "static/media/hero-about.us.png": "/fruits-and-friends-react/static/media/hero-about.us.e83d2fd0d27d8d551d49.png",
     "static/media/hero-index.png": "/fruits-and-friends-react/static/media/hero-index.9057ba68a89d2b56d892.png",
     "index.html": "/fruits-and-friends-react/index.html",
-    "main.09848bce.css.map": "/fruits-and-friends-react/static/css/main.09848bce.css.map",
-    "main.3b068912.js.map": "/fruits-and-friends-react/static/js/main.3b068912.js.map",
+    "main.8410511c.css.map": "/fruits-and-friends-react/static/css/main.8410511c.css.map",
+    "main.40239def.js.map": "/fruits-and-friends-react/static/js/main.40239def.js.map",
     "453.a81d8d96.chunk.js.map": "/fruits-and-friends-react/static/js/453.a81d8d96.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09848bce.css",
-    "static/js/main.3b068912.js"
+    "static/css/main.8410511c.css",
+    "static/js/main.40239def.js"
   ]
 }
