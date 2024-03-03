@@ -783,10 +783,11 @@ hr {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
-	border: 2px solid #d4d3ce;
+	border: 2px solid #cecdc7;
 }
 
-.menu-item-info p {
+.menu-item-info p,
+.menu-item-info h5 {
 	margin-top: -8px;
 }
 
@@ -896,7 +897,7 @@ hr {
 	position: fixed;
 	width: 80vw;
 	margin-top: 0px;
-	border-top: 10px solid #faf9f6;
+	border-top: 20px solid #faf9f6;
 	margin-top: -20px;
 	z-index: 2;
 }
@@ -912,7 +913,7 @@ hr {
 	padding: 10px 20px 70px 20px;
 	background-color: #eae9e3;
 	border-radius: 10px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 
 #cart-item-section {
@@ -920,7 +921,7 @@ hr {
 }
 
 #cart-item {
-	background-color: #d4d3ce;
+	background-color: #d6d5d0;
 	padding: 10px 20px;
 	border-radius: 10px;
 	display: flex;
@@ -951,7 +952,7 @@ hr {
 }
 
 #items {
-	margin-top: 70px;
+	margin-top: 80px;
 }
 
 #send-order-button {
@@ -1206,12 +1207,14 @@ footer a {
 	/* Change order page content */
 	.menu-item {
 		flex-direction: column;
-		justify-content: baseline;
+		justify-content: inherit;
 		align-items: baseline;
 		margin-bottom: 20px;
 	}
 	.menu-item-choice {
-		margin: 0 0 8px 0;
+		display: flex;
+		align-self: flex-end;
+		margin: -10px 0 8px 0;
 	}
 	.menu-item select {
 		margin: 10px 5px 10px 0px;

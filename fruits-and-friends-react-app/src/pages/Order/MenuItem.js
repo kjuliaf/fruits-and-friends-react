@@ -64,7 +64,7 @@ const MenuItem = (props) => {
 				{/* Title, description and price for menu item */}
 				<h4>{props.title}</h4>
 				<p>{props.description}</p>
-				<p>{props.price}:-</p>
+				<h5>{props.price}:-</h5>
 			</div>
 			<div className="menu-item-choice">
 				{/* Displays either quantity selector or selected quantity */}
