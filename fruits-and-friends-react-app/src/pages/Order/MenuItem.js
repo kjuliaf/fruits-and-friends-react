@@ -69,7 +69,7 @@ const MenuItem = (props) => {
 			<div className="menu-item-choice">
 				{/* Displays either quantity selector or selected quantity */}
 				{hideElement ? null :
-					<select value={quantity} onChange={handleQuantityChange}>
+					<select value={quantity} onChange={handleQuantityChange} name="quantity">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
