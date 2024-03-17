@@ -5,7 +5,7 @@ const CartItem = (props) => {
 	 * Removes cart item.
 	 */
 	function removeCartItem() {
-		props.removeFromMap(props.title);
+		props.removeFromCart(props.title);
 		props.removeFromTotalPrice(props.price);
 		props.setUpdateItems(true);
 	}

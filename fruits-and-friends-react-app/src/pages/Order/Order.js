@@ -26,8 +26,8 @@ const Order = () => {
 						price={data.price}
 						addToTotalPrice={addToTotalPrice}
 						removeFromTotalPrice={removeFromTotalPrice}
-						addToMap={addToMap}
-						removeFromMap={removeFromMap}
+						addToCart={addToCart}
+						removeFromCart={removeFromCart}
 						cartItems={cartItems}
 						updateItems={updateItems}
 						setUpdateItems={setUpdateItems}
@@ -75,7 +75,7 @@ const Order = () => {
 	 * @param {string} key - title key string.
 	 * @param {array} value - value array.
 	 */
-	function addToMap(key, value) {
+	function addToCart(key, value) {
 		setCartItems(cartItems.set(key, value));
 	}
 
@@ -83,7 +83,7 @@ const Order = () => {
 	* Removes item from cart based on the key title.
 	* @param {string} key - title key string.
 	*/
-	function removeFromMap(key) {
+	function removeFromCart(key) {
 		cartItems.delete(key);
 	}
 
@@ -118,7 +118,7 @@ const Order = () => {
 					totalPrice={totalPrice}
 					removeFromTotalPrice={removeFromTotalPrice}
 					cartItems={cartItems}
-					removeFromMap={removeFromMap}
+					removeFromCart={removeFromCart}
 					setUpdateItems={setUpdateItems}
 				/> : null}
 			</main>

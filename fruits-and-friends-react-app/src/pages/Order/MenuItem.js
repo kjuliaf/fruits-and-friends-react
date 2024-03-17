@@ -23,7 +23,7 @@ const MenuItem = (props) => {
 			setHideElement(true);
 			setShowElement(true);
 			let values = [quantity, quantityPrice];
-			props.addToMap(props.title, values);
+			props.addToCart(props.title, values);
 		}
 	}
 
@@ -34,7 +34,7 @@ const MenuItem = (props) => {
 		let quantityPrice = (quantity * (Number(props.price)));
 		props.removeFromTotalPrice(quantityPrice);
 		restoreMenuItem();
-		props.removeFromMap(props.title)
+		props.removeFromCart(props.title)
 	}
 
 	/**

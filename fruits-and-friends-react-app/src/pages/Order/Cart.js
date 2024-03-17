@@ -26,7 +26,7 @@ const Cart = (props) => {
 					quantity={value[0]}
 					price={value[1]}
 					removeFromTotalPrice={props.removeFromTotalPrice}
-					removeFromMap={props.removeFromMap}
+					removeFromCart={props.removeFromCart}
 					key={i}
 					setUpdateItems={props.setUpdateItems}
 				/>
